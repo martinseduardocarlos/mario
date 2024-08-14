@@ -1,0 +1,178 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*esse ponto faz referencia para class*/
+.logo-mario{
+    height: 200px;
+}
+
+p{
+    color: beige;
+}
+
+button{
+    /*cor da linha*/
+    color: white;
+    /*cor da caixa*/
+    background-color: #c51111;
+    /*moudura da caixa*/
+    border-radius: 3px;
+    /*tira a moudura da caixa*/
+    border: none;
+    /*lagura do botao aumentando*/
+    width: 200px;
+    /*altura do botao*/
+    height: 50px;
+    /*quando passar o mouse encima do botao ficar mâo*/
+    cursor: pointer;
+    text-transform: uppercase;
+    /*fonte mais grossa e negrito:bold*/
+    font-weight: bold;
+    /*margem do botao e o texto separado*/
+    margin-top: 30px;
+}
+/*esse ponto faz referencia para class*/
+.img-mario-luigi{
+    height: 500px;
+}
+/*usando o display flex ele deixa uma item debaixo do outro porque index criamos div que serve com caixa*/
+body{
+    
+    /*é para ocupar a tela enteira*/
+    height: 100vh;
+}
+.caixa-mae{
+    display: flex;
+    /*alinhamento dos itens*/
+    align-items: center;
+    /*como se fosse uma justifica o texto (Ctrl+espaço)*/
+    justify-content: space-around;
+    /*é como se fosse uma margem das laterais*/
+    padding:100px ;
+
+}
+.caixa-principal{
+width: 40%;
+}
+.caixa-video{
+    /*para o video ficar fixo*/
+    position: fixed;
+    top: 0;
+    /*esse codigo manda o video para traz -1 ou 1 para frente*/
+    z-index: -1;
+}
+video{
+    /*para o video ocupar toda tela(width=altura)*/
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+}
+/*mascara é codigo escuro do video*/
+.mascara{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    position: fixed;
+    top: 0;
+}
+/*imagem do whatsapp*/
+.link-whatsapp img{
+    height: 60px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+}
+.header{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px;
+
+}
+.header img{
+    height:60px ;
+    
+}
+.header a{
+    color: aliceblue;
+    font-size: 24px;
+    cursor: pointer;
+}
+/*evento para a letra mudar de cor no caso o vermelho*/
+.header a:hover{
+    color:#c51111;
+    /*para aumentar o tamanho da letra*/
+    font-size: 26px;
+    /*mudar de cor lentamente para o vermelho*/
+    transition: 1s ease-in-out;
+
+}
+.formulario-fale-conosco{
+    background-color: white;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    position: fixed;
+    left: -300px;
+    top: 30%;
+    padding: 20px;
+    border-radius: 5px;
+    transition: left 1s ease-in-out;
+}
+input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 5px;
+    outline-color: #18D80F;
+}
+textarea {
+    width: 270px;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 5px;
+    outline-color: #18D80F;
+
+}
+
+.mascara-formulario{
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    transition: visibility 1s ease-in-out;
+}
+
+@media(max-width:1100px){
+    button{
+        background-color:blue;
+        
+    }
+    p{
+        display: none;
+    }
+    .caixa-mae{
+        flex-direction: column;
+        padding: 10px;
+    }
+    .caixa-principal{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .img-mario-luigi{
+        width: 80vw;
+        height: auto;
+    }
+    .header img{
+        display: none;
+    }
+}
